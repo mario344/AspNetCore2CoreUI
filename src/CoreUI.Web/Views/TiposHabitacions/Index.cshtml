@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CoreUI.Web.Models.TiposHabitacion>
+
+@{
+    ViewData["Title"] = "Tipo de habitación";
+}
+
+<h2></h2>
+
+<p>
+    <a class="btn btn-primary" data-toggle="modal" data-target="#modalTipohabitacion" onclick="adminModalTipoHabitacion(1, 0, 0)">Crear nuevo tipo de habitación</a>
+</p>
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify">
+                "Tipo de habitación"
+            </i>
+        </div>
+        <table class="table table-responsive table-hover table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>
+                        Ord
+                    </th>
+                    <th>
+                        Sucursal
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Nom. Corto
+                    </th>
+                    <th>
+                        No. Personas
+                    </th>
+                    <th>
+                        Precio habitación
+                    </th>
+                    <th>
+                        Precio x persona extra
+                    </th>
+                    <th>
+                        Precio niño extra
+                    </th>
+                    <th>
+                        Observaciones
+                    </th>
+                    <th>
+                        Estatus
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="idTipoHabitacion">               
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalTipohabitacion" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" id="contentModalTipoHabitacion">
+
+        </div>
+    </div>
+</div>
+

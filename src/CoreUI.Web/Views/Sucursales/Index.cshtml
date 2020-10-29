@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CoreUI.Web.Models.Sucursales>
+
+@{ ViewData["Title"] = "Index"; }
+
+<h2>Sucursales</h2>
+
+<p>
+    <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalSucursal" onclick="creaModalSucursales(1,0)">Crear Nueva sucursal </a>
+</p>
+
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify">
+                "Sucursales"
+            </i>
+        </div>
+
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre Empresa
+                    </th>
+
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Direccion
+                    </th>
+                    <th>
+                        Telefono
+                    </th>
+                    <th>
+                        Estatus
+                    </th>
+
+                    <th>
+                        Empresas
+                    </th>
+                    <th>
+                        Pais
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="respuestaSucursales">
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+
+
+<div class="modal fade show" id="modalSucursal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Sucursales</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalSucursalesCuerpo">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

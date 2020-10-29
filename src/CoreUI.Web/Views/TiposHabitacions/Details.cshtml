@@ -1,0 +1,90 @@
+﻿@model CoreUI.Web.Models.TiposHabitacion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TiposHabitacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreCorto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreCorto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NoPesonas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NoPesonas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioHabitacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrecioHabitacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioPersonaExtra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrecioPersonaExtra)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioNinioExtra)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrecioNinioExtra)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrAlta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UsrAlta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrFechaAlta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UsrFechaAlta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UsrMod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UsrFechaMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UsrFechaMod)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TiposHabitacionID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

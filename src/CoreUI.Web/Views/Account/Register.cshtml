@@ -1,0 +1,74 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Registrar";
+}
+
+<h3>Alta de usuario</h3>
+
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card border-primary">
+                <div class="card-header">
+                    <strong>Nuevo usuario</strong>
+                    <small>Completa campos</small>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <h4>Datos de la cuenta</h4>
+                        <hr />
+                        <div ></div>
+                        <div class="form-group">
+                            <label for="Email"></label>
+                            <input for="Email" id="Email" class="form-control" />
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="Password"></label>
+                            <input for="Password" id="Password" class="form-control" />                            
+                        </div>
+                        <div class="form-group">
+                            <label for="ConfirmPassword"></label>
+                            <input for="ConfirmPassword" id="ConfirmPassword" class="form-control" />
+                            
+                        </div>
+                        <button type="submit" class="btn btn-default">Registrar</button>
+                    </form>
+                </div>
+            </div>           
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card border-primary">
+                <div class="card-header">
+                    <strong>Registrar empresa</strong>
+                    <small>Completa campos</small>
+                </div>
+                <div class="card-body">
+                    <form >
+                        <h4>Datos de la empresa</h4>
+                        <hr />
+                        <div></div>
+                        <div class="form-group">
+                            <label>Razón social </label>
+                            <input id="razonSocial" class="form-control" />                            
+                        </div>
+                        <div class="form-group">
+                            <label> Dirección</label>
+                            <input id="direccion" class="form-control" />                           
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" id="telefono" class="form-control" />                            
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

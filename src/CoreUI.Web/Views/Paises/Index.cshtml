@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CoreUI.Web.Models.Paises>
+
+@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Paises</h2>
+
+<p>
+    <a class="btn btn-primary btn-sm">Nuevo País</a>
+</p>
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify">
+                "Paises"
+            </i>
+        </div>
+
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                       Estatus
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="respuestaPaises">
+          
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

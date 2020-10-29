@@ -1,0 +1,85 @@
+﻿@model IEnumerable<CoreUI.Web.Models.Habitaciones>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#modalHabitacion" onclick="creaModalHabitaciones(1, 0)">Crear habitación</a>
+</p>
+
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify">
+                "Habitaciones"
+            </i>
+        </div>
+
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>
+                        Tipo de habitación
+                    </th>
+                    <th>
+                        Nombre habitación
+                    </th>
+                    <th>
+                        No. habitacion
+                    </th>
+
+                    <th>
+                        Precio
+                    </th>
+                    <th>
+                        Precio Niño
+                    </th>
+                    <th>
+                        Precio Adulto
+                    </th>
+                    <th>
+                        Estatus
+                    </th>
+                    <th>
+                        Piso
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="respuestaHabitaciones">
+            </tbody>
+
+
+
+        </table>
+
+
+    </div>
+</div>
+
+
+
+<div class="modal fade show" id="modalHabitacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Habitaciones</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalHabitacionCuerpo">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

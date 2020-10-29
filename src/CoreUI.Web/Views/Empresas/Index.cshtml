@@ -1,0 +1,136 @@
+﻿@model IEnumerable<CoreUI.Web.Models.Empresas>
+@{
+    ViewData["Title"] = "Empresa";
+}
+<h2>Empresa</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify">
+                "Empresa"
+            </i>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Razón Social
+                        </th>
+                        <th>
+                            Dirección
+                        </th>
+                        <th>
+                            Teléfono
+                        </th>
+                        <th>
+                            Estatus
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Estados)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Paises)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Direccion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Telefono)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estatus)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estados.EstadoId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Paises.PaisId)
+                            </td>
+                            <td>
+                                <a class="btn btn-success" data-toggle="modal" asp-action="Edit" asp-route-id="@item.EmpresaId"><i class="fa fa-edit"></i>Editar</a> |
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.EmpresaId"><i class="fa fa-lightbulb-o"></i>Detalles</a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--Modal editar-->
+<div class="modal" id="modalEditarEmpresa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-success" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Empresa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" name="id" id="id" />
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Usuario</span>
+                            @*<label for="UserName" class="control-label"></label>*@
+                            <input readonly name="UserName" id="UserName" class="form-control" />
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Roles</span>
+                            <select id="Select" name="Select" class="form-control" onclick="getRoles('Usuarios/GetRoles');">
+                                <option value="0">Seleccione un rol</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Email</span>
+                            @*<label for="Email" class="control-label"></label>*@
+                            <input name="Email" id="Email" class="form-control" />
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Telefono</span>
+                            @*<label for="PhoneNumber" class="control-label"></label>*@
+                            <input name="PhoneNumber" id="PhoneNumber" class="form-control" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="editarUsuario('Usuarios/EditUsuario')"><i class="fa fa-save"></i> Guardar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
